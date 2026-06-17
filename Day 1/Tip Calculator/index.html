@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Input div  -->
+
+      <div id="box">
+        <!-- Input for Bill Amount -->
+        <div class="input-row" id="bill-container">
+          <label for="billamount">Bill Amount ₹</label>
+          <input type="number" inputmode="numeric" id="billamount" />
+        </div>
+        <!-- Input for Tip Percentage -->
+        <div class="input-row" id="tip-container">
+          <label for="tippercentage">Tip %</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="tippercentage"
+            value="15"
+          />
+        </div>
+        <!-- Input for number of people  -->
+        <div class="input-row" id="no-of-people">
+          <label for="persons">No. of People</label>
+          <input type="number" inputmode="numeric" id="persons" value="1" />
+        </div>
+      </div>
+      <button id="calculate">Caclulate</button>
+      <!-- Result div  -->
+      <div id="result">
+        <div class="result-row" id="total-bill">
+          <span> Total Bill ₹ :</span>
+          <span class="result-space" id="total-bill-amount"></span>
+        </div>
+        <div class="result-row" id="tip">
+          <span> Tip ₹ : </span>
+          <span class="result-space" id="tip-amount"></span>
+        </div>
+        <div class="result-row" id="tip-per-person">
+          <span>Tip Per Person ₹:</span>
+          <span class="result-space" id="tip-pp-amount"></span>
+        </div>
+        <div class="result-row" id="total-pp">
+          <span>Total Per Person ₹:</span>
+          <span class="result-space" id="total-pp-amount"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
