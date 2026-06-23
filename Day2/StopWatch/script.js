@@ -1,26 +1,42 @@
-const clock = document.getElementById("displayTime");
-const srt = document.getElementById("start");
-const pause = document.getElementById("pause&resume");
-let hr = 0;
-let min = 59;
-let sec = 50;
+const display = document.getElementById("display");
+let timer = null;
+let startTime = 0;
+let elapsedTime = 0;
+let isRunning = false;
 
-function clockFuntion() {
-  console.log("works only 1 time");
-  var interval = setInterval(() => {
-    sec = sec + 1;
-    if (sec >= 60) {
-      min = min + 1;
-      sec = 0;
-    }
-    if (min >= 60) {
-      hr = hr + 1;
-      min = 0;
-    }
-    clock.innerHTML = `${hr}:${min}:${sec}`;
-  }, 1000);
+function start() {
+  if (!isRunning) {
+    startTime = Date.now() - elapsedTime;
+    timer = setInterval(update, 10);
+    isRunning = true;
+  }
 }
-srt.addEventListener("click", clockFuntion, { once: true });
-pause.addEventListener("click", () => {
-  clearInterval(interval);
-});
+function stop() {
+  if (isRunning) {
+    clearInterval(timer);
+    elapsedTime = Date.now() - startTime;
+    isRunning = false;
+  }
+}
+function reset() {
+  clearInterval(timer);
+  startTime = 0;
+  elapsedTime = 0;
+  isRunning = false;
+  display.textContent = "00:00:00:00";
+}
+function update() {
+  const currentTime = Date.now();
+  elapsedTime = currentTime - startTime;
+  let hrs = Math.floor(elapsedTime / (1000 * 60 * 60));
+  let min = Math.floor((elapsedTime / (1000 * 60)) % 60);
+  let sec = Math.floor((elapsedTime / 1000) % 60);
+  let msec = Math.floor((elapsedTime % 1000) / 10);
+
+  hrs = String(hrs).padStart(2, "0");
+  min = String(min).padStart(2, "0");
+  sec = String(sec).padStart(2, "0");
+  msec = String(msec).padStart(2, "0");
+
+  display.textContent = `${hrs}:${min}:${sec}:${msec}`;
+}
