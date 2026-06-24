@@ -95,3 +95,9 @@ footer #clear-all-btn {
   border: none;
   text-align: center;
 }
+
+/* dynamic clas "complete" styl */
+.completed {
+  text-decoration: line-through;
+  color: hsl(0, 0%, 60%);
+}
