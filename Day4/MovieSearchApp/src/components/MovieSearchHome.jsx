@@ -44,7 +44,7 @@ const GENRES = [
   "Horror",
 ];
 
-const NAV_LINKS = ["Discover", "Lists", "Reviews"];
+const NAV_LINKS = ["Movie", "TV", "People"];
 
 // ── Icons (inline SVG, no external deps) ──────────────────────────────────────
 
