@@ -13,6 +13,29 @@ function App() {
       }}
     >
       <Navbar />
+      {/* Hero Section */}
+
+      <section className="flex-1 flex flex-col items-center justify-center px-8 pt-12 pb-8 text-center">
+        <p className="text-[11px] uppercase tracking-[0.12em] font-medium mb-4 font-sans text-amber ">
+          Every film, rated &amp; remembered
+        </p>
+
+        <h1
+          className="text-[46px] leading-[1.1] text-white mb-2 "
+          style={{
+            fontFamily: "'DM Serif Display', serif",
+            letterSpacing: "-0.025em",
+          }}
+        >
+          Find your next
+          <br />
+          <em className="text-amber">great watch</em>
+        </h1>
+
+        <p className="text-[14px] text-text-secodary font-light tracking-wide mb-10">
+          Search 1M+ film & TV shows
+        </p>
+      </section>
     </div>
   );
 }
