@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar.jsx";
+import SearchBar from "./components/SearchBar.jsx";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <p className="text-[14px] text-text-secodary font-light tracking-wide mb-10">
           Search 1M+ film & TV shows
         </p>
+        <SearchBar></SearchBar>
       </section>
     </div>
   );
