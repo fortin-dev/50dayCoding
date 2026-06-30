@@ -2,8 +2,29 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar.jsx";
 import SearchBar from "./components/SearchBar.jsx";
+import MovieGrid from "./components/MovieGrid.jsx";
+import { fetchTrendingMovies } from "./services/tmdbApi.js";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    const loadInitialMovies = async () => {
+      // setIsLoading(true);
+      // setError(null);
+      const trending = await fetchTrendingMovies();
+
+      if (trending.length === 0) {
+        setError("Could not load trending movies.");
+      } else {
+        setMovies(trending); // Replace mock data with real results
+        console.log(trending);
+      }
+      // setIsLoading(false);
+    };
+
+    loadInitialMovies();
+  }, []);
+
   return (
     <div
       className="min-h-screen flex flex-col"
@@ -38,6 +59,7 @@ function App() {
         </p>
         <SearchBar></SearchBar>
       </section>
+      <MovieGrid movies={movies} />
     </div>
   );
 }
