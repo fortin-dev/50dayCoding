@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { fetchMovieImage } from "../services/tmdbApi.js";
 
 export default function MovieCard(movie) {
   const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";

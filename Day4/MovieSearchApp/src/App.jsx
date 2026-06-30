@@ -17,7 +17,7 @@ function App() {
         setError("Could not load trending movies.");
       } else {
         setMovies(trending); // Replace mock data with real results
-        console.log(trending);
+        // console.log(trending);
       }
       // setIsLoading(false);
     };
