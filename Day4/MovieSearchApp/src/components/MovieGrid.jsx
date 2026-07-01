@@ -8,9 +8,11 @@ export default function MovieGrid({ movies }) {
       >
         Trending this week
       </p>
-      <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
+      <div className="flex flex-row items-stretch gap-6 overflow-x-auto pb-4 scrollbar-none scrollbar-thumb-slate-700 scrollbar-track-transparent">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <div className="w-64 shrink-0">
+            <MovieCard key={movie.id} movie={movie} />
+          </div>
         ))}
       </div>
     </section>

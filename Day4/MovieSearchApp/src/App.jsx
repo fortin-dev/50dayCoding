@@ -60,6 +60,9 @@ function App() {
         <SearchBar></SearchBar>
       </section>
       <MovieGrid movies={movies} />
+      {/* <footer className="flex items-center justify-center font-serif-display text-amber py-4 cursor-pointer ">
+        <span onClick={() =>}>CineLove</span>
+      </footer> */}
     </div>
   );
 }
